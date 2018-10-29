@@ -39,5 +39,21 @@ function addComment($postId, $author, $comment)
     }
 }
 
+function alertComment($commentId)
+{
+    $commentManager = new CommentManager();
+    $alert = $commentManager->alert($_GET['id']);
+     
+    if ($alert === false) 
+    {
+        throw new \Exception('Impossible de moderer le commentaire !');
+    }
+    else 
+    {
+        header('Location: index.php?action=post&id=' .$_GET['post_id']);
+    }
+}
+
+
 
 

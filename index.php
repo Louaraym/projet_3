@@ -47,6 +47,19 @@ try
                     Vous pouvez contacter l\'administrateur du site si vous pensez qu\'il s\'agit d\'un bug.');  
             }
         }
+        // Signalement d'un commentaire par un utilisateur
+        elseif ($_GET['action'] == 'alertComment') 
+        {
+            if (isset($_GET['id']) && $_GET['id'] >0) 
+            {
+               alertComment($_GET['id']);
+            }
+            else 
+            {
+                throw new \Exception('Le document auquel vous tentez d\'accéder est introuvable. <br>
+                    Vous pouvez contacter l\'administrateur du site si vous pensez qu\'il s\'agit d\'un bug.');             
+            }
+        }
     }  
     else 
     {
