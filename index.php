@@ -60,6 +60,11 @@ try
                     Vous pouvez contacter l\'administrateur du site si vous pensez qu\'il s\'agit d\'un bug.');             
             }
         }
+        // Affichage page de connexion
+         elseif ($_GET['action'] == 'login') 
+        {
+            loginForm();
+        }
     }  
     else 
     {

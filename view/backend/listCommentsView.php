@@ -1,6 +1,13 @@
-       
+<?php
+session_start();
+?>        
 <?php $title = 'Mon blog'; ?>
         <?php ob_start(); ?>
+<?php
+if (isset($_SESSION['pseudo'])) 
+{
+
+?> 
         
 <p>Voici la liste des commentaires en attente de moderation</p>
 
@@ -27,7 +34,13 @@
         } 
     ?>
 </table> 
-
+<?php
+ }
+else
+{
+    header('location: index.php?action=login');
+}
+?>
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

@@ -1,4 +1,6 @@
-  
+<?php
+session_start();
+?>  
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,14 +10,27 @@
         <style type="text/css"> body{ background-color:#CCCCCC;}</style>
     </head>   
     <body>
-    	
-	   <div class="error">
-	     <h1>Page d'erreur !</h1>
-	     <?=  '<p style="color: red">'.$errorMessage.'</p>' ?>
-	     <p><a href="admin.php">Retour sur le tableau de bord</a></p>
-	    </div>
+
+    <?php
+    if (isset($_SESSION['pseudo'])) 
+    {
+      ?>
+       <div class="error">
+         <h1>Page d'erreur !</h1>
+         <?=  '<p style="color: red">'.$errorMessage.'</p>' ?>
+         <p><a href="admin.php">Retour sur le tableau de bord</a></p>
+        </div>
+      <?php
+     }
+    else
+    {
+        header('location: index.php?action=login');
+    }
+
+    ?>
 
     </body>
 </html>          
 
+            
  			

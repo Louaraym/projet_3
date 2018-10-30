@@ -1,7 +1,13 @@
-       
+<?php
+session_start();
+?>       
 <?php $title = 'Mon blog'; ?>
         <?php ob_start(); ?>
+<?php
+if (isset($_SESSION['pseudo'])) 
+{
 
+?> 
 <p>Ajouter un nouveau article</p>    
     <form action="admin.php?action=addPost" method="POST">
         <p>Auteur<br><input class="my_form" type="text" size="65" name="author" required></p>
@@ -9,6 +15,13 @@
         <p>Contenu<br><textarea name="content" class="tinymce" placeholder="Rédiger le contenu de votre article ici" rows="25" cols="95" ></textarea></p>
         <p><input type="submit" name="ajouter" value="Ajouter l'article"></p>
     </form>
+ <?php
+ }
+else
+{
+    header('location: index.php?action=login');
+}
+?>
     
 <?php $content = ob_get_clean(); ?>
 

@@ -54,6 +54,50 @@ function alertComment($commentId)
     }
 }
 
+function loginForm()
+{
+
+  if (isset($_POST['Connexion']))
+  {
+    
+    $pseudo = htmlspecialchars(trim($_POST['pseudo']));
+    $pass = htmlspecialchars(trim($_POST['pass']));
+    
+    $userManager = new UserManager();
+    $resultat =  $userManager->getUser($pseudo);
+
+    // Comparaison du pass envoyé via le formulaire avec la base
+    $isPasswordCorrect = password_verify($pass, $resultat['pass']);
+
+    if (!$resultat)
+    {
+        $erreur = '<p> Identifiant ou mot de passe incorrect !</p>';
+    }
+    else
+    {
+        if ($isPasswordCorrect) 
+        {
+            session_start();
+            $_SESSION['pseudo'] = $pseudo;
+            header('location: admin.php');
+        }
+        else 
+        {
+            $erreur = '<p> Identifiant ou mot de passe incorrect !</p>';
+        }
+    }
+  }
+
+ require('view/frontend/loginView.php');
+
+ if(isset($erreur))
+ {
+    echo '<font color="red">'.$erreur.'</font>';
+ }
+
+}
+
+
 
 
 

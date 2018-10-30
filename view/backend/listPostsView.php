@@ -1,8 +1,14 @@
-     
+<?php
+session_start();
+?>      
 <?php $title = 'Mon blog'; ?>
 
     <?php ob_start(); ?>
+<?php
+if (isset($_SESSION['pseudo'])) 
+{
 
+?>
     <p>Il y a actuellement <?= $nbre_total_articles ?> articles publiés sur le site. En voici la liste :</p>    
 <table>
       <tr><th>Auteur</th><th>Titre</th><th>Date de publication</th><th>Dernière modification</th><th>Action</th></tr>  
@@ -15,7 +21,13 @@
 
     ?>
 </table>
-
+<?php
+ }
+else
+{
+    header('location: index.php?action=login');
+}
+?>
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

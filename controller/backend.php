@@ -98,3 +98,93 @@ function deleteComment($commentId)
    
 } 
 
+function loginView()
+{
+    require('view/backend/loginView.php');
+}
+
+function logOut()
+{
+    require('view/backend/logout.php');
+}
+
+
+function updateMyProfil()
+{
+    session_start();
+    $userManager = new UserManager();
+    if (isset($_POST['submit'])) 
+        {
+             $pseudo = trim($_POST['pseudo']);
+             if (empty($pseudo)) 
+             {
+                 $erreur = "<p><br>Veuillez saisir votre nouveau identifiant !</p>";
+             }
+             else
+             {              
+                //  Mise à jour du pseudo
+                $resultat =  $userManager->updateProfil($pseudo);
+
+                if ($resultat === false) 
+                {
+                    $erreur = "<p>La mise à jour a échoué !</p>";
+                }
+                else 
+                {
+                    header('location: index.php?action=login');
+                }
+                
+             }              
+        } 
+
+        if (isset($_POST['pass_submit'])) 
+        {
+            $ancien_pass = trim($_POST['ancien_pass']);
+            $nouveau_pass = trim($_POST['nouveau_pass']);
+            $re_nouveau_pass = trim($_POST['re_nouveau_pass']);
+            $ancien_pass_hache = password_hash($ancien_pass, PASSWORD_DEFAULT);
+
+            //  Récupération de l'ancien pass hashé
+             $formerPwd =  $userManager->getFormerPwd();
+
+            // Comparaison du pass envoyé via le formulaire avec la base
+            $isPasswordCorrect = password_verify($ancien_pass, $formerPwd['pass']);
+
+            if (empty($ancien_pass) || empty($nouveau_pass) || empty($re_nouveau_pass)) 
+            {
+                $erreur = '<p>Veuillez saisir tous les champs !</p>';
+            }
+            elseif (!$isPasswordCorrect) 
+            {
+               $erreur = '<p>L\'ancien mot de passe est incorrect !</p>';
+            }
+            elseif ($nouveau_pass != $re_nouveau_pass) 
+            {
+               $erreur = '<p>Vos nouveaux mots de passe sont différents !</p>';
+            }           
+            else
+            {
+                $nouveau_pass_hache = password_hash($nouveau_pass, PASSWORD_DEFAULT);
+                $newPwd = $userManager->updatePwd($nouveau_pass_hache);
+
+                if ($newPwd === false) 
+                {
+                    $erreur = "<p>La mise à jour a échoué !</p>";
+                }
+                else 
+                {
+                    header('location: index.php?action=login');
+                }
+                
+            }
+            
+        } 
+
+    require('view/backend/updateMyProfilView.php');
+
+    if(isset($erreur))
+     {
+        echo '<font color="red">'.$erreur.'</font>';
+     }
+}
+

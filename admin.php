@@ -94,6 +94,16 @@ try
                     Vous pouvez contacter l\'administrateur du site si vous pensez qu\'il s\'agit d\'un bug.');             
             }
         }
+        // Déconnexion
+        elseif ($_GET['action'] == 'logOut') 
+        {
+           logOut();
+        }
+        // Affichage page changement de profil
+        elseif ($_GET['action'] == 'updateMyProfil') 
+        {
+           updateMyProfil();
+        }
         
     }
     else 
