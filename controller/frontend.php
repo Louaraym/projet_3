@@ -54,6 +54,7 @@ function alertComment($commentId)
     }
 }
 
+
 function loginForm()
 {
 
@@ -71,7 +72,7 @@ function loginForm()
 
     if (!$resultat)
     {
-        $erreur = '<p> Identifiant ou mot de passe incorrect !</p>';
+        $erreur = 'Identifiant ou mot de passe incorrect !';
     }
     else
     {
@@ -83,7 +84,7 @@ function loginForm()
         }
         else 
         {
-            $erreur = '<p> Identifiant ou mot de passe incorrect !</p>';
+            $erreur = 'Identifiant ou mot de passe incorrect !';
         }
     }
   }
@@ -91,8 +92,8 @@ function loginForm()
  require('view/frontend/loginView.php');
 
  if(isset($erreur))
- {
-    echo '<font color="red">'.$erreur.'</font>';
+ {  
+    echo  '<p style="color: red; text-align: center"*/>'.$erreur.'</p>';
  }
 
 }

@@ -14,7 +14,7 @@
         { 
           ?>
         <div class="admin_wrap"> 
-            <nav class="navigation">
+            <nav>
             <ul>
                 <li><a href="index.php">Accueil du site</a></li>
                 <li><a href="admin.php">Tableau de bord</a></li>
@@ -24,11 +24,8 @@
                 <li><a href="admin.php?action=logOut">Se déconnecter</a></li>
             </ul>
             </nav>
-
-            <div class="main_content">
-                <P>Bonjour <?= $_SESSION['pseudo']; ?></P> 
-                            <?= $content ?>  
-            </div> 
+            <h2>Bonjour <?= $_SESSION['pseudo']; ?></h2> 
+            <?= $content ?>  
         </div>
         <?php
         }

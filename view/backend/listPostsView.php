@@ -9,7 +9,7 @@ if (isset($_SESSION['pseudo']))
 {
 
 ?>
-    <p>Il y a actuellement <?= $nbre_total_articles ?> articles publiés sur le site. En voici la liste :</p>    
+    <h2>Il y a actuellement <?= $nbre_total_articles ?> articles publiés sur le site. En voici la liste :</h2>    
 <table>
       <tr><th>Auteur</th><th>Titre</th><th>Date de publication</th><th>Dernière modification</th><th>Action</th></tr>  
     <?php 

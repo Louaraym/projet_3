@@ -9,7 +9,7 @@ if (isset($_SESSION['pseudo']))
 
 ?> 
         
-<p>Voici la liste des commentaires en attente de moderation</p>
+<h2>Voici la liste des commentaires en attente de moderation</h2>
 
 <table>
       <tr><th>Auteur</th><th>Commentaire</th><th>Titre de l'article associé au commentaire</th><th>Date de publication</th><th>Action</th></tr>  
@@ -22,7 +22,7 @@ if (isset($_SESSION['pseudo']))
     ?>
 </table> 
 
-        <p>Voici la liste des commentaires qui ont été approuvés</p>
+        <h2>Voici la liste des commentaires qui ont été approuvés</h2>
 
 <table>
       <tr><th>Auteur</th><th>Commentaire</th><th>Titre de l'article associé au commentaire</th><th>Date de publication</th><th>Signalement</th><th>Action</th></tr>  

@@ -118,7 +118,7 @@ function updateMyProfil()
              $pseudo = trim($_POST['pseudo']);
              if (empty($pseudo)) 
              {
-                 $erreur = "<p><br>Veuillez saisir votre nouveau identifiant !</p>";
+                 $erreur = "Veuillez saisir votre nouveau identifiant !";
              }
              else
              {              
@@ -127,7 +127,7 @@ function updateMyProfil()
 
                 if ($resultat === false) 
                 {
-                    $erreur = "<p>La mise à jour a échoué !</p>";
+                    $erreur = "La mise à jour a échoué !";
                 }
                 else 
                 {
@@ -152,15 +152,15 @@ function updateMyProfil()
 
             if (empty($ancien_pass) || empty($nouveau_pass) || empty($re_nouveau_pass)) 
             {
-                $erreur = '<p>Veuillez saisir tous les champs !</p>';
+                $erreur = 'Veuillez saisir tous les champs !';
             }
             elseif (!$isPasswordCorrect) 
             {
-               $erreur = '<p>L\'ancien mot de passe est incorrect !</p>';
+               $erreur = 'L\'ancien mot de passe est incorrect !';
             }
             elseif ($nouveau_pass != $re_nouveau_pass) 
             {
-               $erreur = '<p>Vos nouveaux mots de passe sont différents !</p>';
+               $erreur = 'Vos nouveaux mots de passe sont différents !';
             }           
             else
             {
@@ -184,7 +184,7 @@ function updateMyProfil()
 
     if(isset($erreur))
      {
-        echo '<font color="red">'.$erreur.'</font>';
+        echo  '<p style="color: red; text-align: center"*/>'.$erreur.'</p>';
      }
 }
 

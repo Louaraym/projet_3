@@ -1,7 +1,7 @@
       
 <?php $title = 'Mon blog'; ?>
         <?php ob_start(); ?>
-        <p>Il y a actuellement <?= $nbre_total_articles ?> articles publiés sur le site. En voici la liste :</p>       
+        <h2>Il y a actuellement <?= $nbre_total_articles ?> articles publiés sur le site. En voici la liste :</h2>       
     <?php
         foreach ($listPosts as $post)
         {

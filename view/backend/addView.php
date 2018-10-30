@@ -7,14 +7,15 @@ session_start();
 if (isset($_SESSION['pseudo'])) 
 {
 
-?> 
-<p>Ajouter un nouveau article</p>    
-    <form action="admin.php?action=addPost" method="POST">
-        <p>Auteur<br><input class="my_form" type="text" size="65" name="author" required></p>
-        <p>Titre<br><input class="my_form" type="text" size="65" name="title" required></p>
-        <p>Contenu<br><textarea name="content" class="tinymce" placeholder="Rédiger le contenu de votre article ici" rows="25" cols="95" ></textarea></p>
-        <p><input type="submit" name="ajouter" value="Ajouter l'article"></p>
-    </form>
+?> <div class="adminForm">
+		<h2>Ajouter un nouveau article</h2>    
+	    <form action="admin.php?action=addPost" method="POST">
+	        <p>Auteur<br><input class="my_form" type="text" size="65" name="author" required></p>
+	        <p>Titre<br><input class="my_form" type="text" size="65" name="title" required></p>
+	        <p>Contenu<br><textarea name="content" class="tinymce" placeholder="Rédiger le contenu de votre article ici" rows="25" cols="95" ></textarea></p>
+	        <p><input type="submit" name="ajouter" value="Ajouter l'article"></p>
+	    </form>
+	</div>
  <?php
  }
 else

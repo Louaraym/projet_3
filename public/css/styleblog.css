@@ -24,14 +24,13 @@
 
 body
 {
-   /* background-image: url(../images/fond_jaune.png);*/
     font-family: Trebuchet MS, Arial, sans-serif;
     font-weight: normal;
     color: #181818;
 }
 
 
-.pagination, .continuer, .adminForm, h1, h2, h3, p
+.pagination, .continuer, .adminForm, h1, h2, h3, .emptyComment, .comment p
 {
     text-align:center;
 }
@@ -58,16 +57,8 @@ h3
     padding-right: 12px;
 }
 
-.news, .comment, .commentForm, .emptyComment
-{
-    width: 70%;
-    margin: auto;
-}
-
 footer
 {
-    width: 70%;
-    margin: auto;
     background-color: grey;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -98,6 +89,7 @@ footer
     background-color: #CCCCCC;
     margin-bottom: 100px;
     padding-bottom: 3px;
+    text-align: center;
 }
 
 .login, .error
@@ -137,7 +129,18 @@ a
     margin: auto;
     display: flex;
     flex-direction: column; 
-}  
+}
+
+.public_wrap
+{
+    width: 70%;
+    margin: auto;
+} 
+
+.public_wrap ul
+{
+    justify-content: space-between;
+} 
 
 nav ul
 {
@@ -145,7 +148,7 @@ nav ul
     display: flex;
 } 
 
-nav li
+ .admin_wrap li
 {
     margin-right: 30px;
 }
@@ -155,28 +158,9 @@ tr:hover  td, a:hover{
     color: white;
 }
 
-.wrap_public
-{
-    width: 70%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-} 
-
-.admin_title
-{
-    margin-right: -80px;
-}
-
-.navigation_public
+.user
 {
     margin-left: -40px;
-}
-
-.logout
-{
-    margin-right: -26px;
 }
 
 .my_form
@@ -184,9 +168,14 @@ tr:hover  td, a:hover{
    width: 50%;
 }
 
- header h1
+ h1
 {
-    font-size: 1.4em;
+    font-size: 1.6em;
+}
+
+ h2
+{
+    font-size: 1em;
 }
 
 @media all and (max-width: 1024px)
@@ -200,9 +189,16 @@ tr:hover  td, a:hover{
     nav ul
     {
         flex-direction: column;
+        margin-right: 50px;
     } 
+    
+    .user
+    {
+        margin-left: 0px;
+    }
 
-    header h1
+
+    h1
     {
         font-size: 1.3em;
     }
@@ -212,28 +208,10 @@ tr:hover  td, a:hover{
         width: 90%;
     }
 
-     .admin_wrap, table, footer, .news, .comment, .commentForm, .emptyComment
+     .admin_wrap, .public_wrap, table
     {
         width: 100%;
     } 
-
-    .wrap_public
-    {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .navigation_public
-    {
-        margin-right: -80px;
-        margin-bottom: -25px;
-    }
-
-    .wrap_public header
-    {
-       margin-left: 50px;
-       margin-bottom: -25px;
-    }
 
 }
 
