@@ -30,7 +30,7 @@ body
 }
 
 
-.pagination, .continuer, .adminForm, h1, h2, h3, .emptyComment, .comment p
+.pagination, .continuer, .adminForm, .emptyComment, .comment p, h1, h2, h3
 {
     text-align:center;
 }

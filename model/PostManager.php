@@ -65,10 +65,9 @@ class PostManager extends DaoManager
         return $ajout;
     }
 
-    public function deletePost($postId)
+     public function deletePost($postId)
     {
-         
-        $req = $this->dao->prepare('DELETE FROM posts WHERE id = ?');
+        $req = $this->dao->prepare('DELETE p, c FROM posts p LEFT JOIN comments c  ON p.id = c.post_id WHERE p.id = ?');
         $req->execute(array($postId));
 
         return $req;
