@@ -60,6 +60,16 @@ try
                     Vous pouvez contacter l\'administrateur du site si vous pensez qu\'il s\'agit d\'un bug.');             
             }
         }
+        //Affichage page Mentions légales
+         elseif ($_GET['action'] == 'mentionsLegales') 
+        {
+            mentionsLegales();
+        }
+        //Affichage page A propos de l'auteur
+         elseif ($_GET['action'] == 'apropos') 
+        {
+            apropos();
+        }
         // Affichage page de connexion
          elseif ($_GET['action'] == 'login') 
         {

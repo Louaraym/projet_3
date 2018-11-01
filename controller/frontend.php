@@ -98,6 +98,17 @@ function loginForm()
 
 }
 
+function mentionsLegales()
+{
+    require('view/frontend/mentionsLegalesView.php');
+}
+
+function apropos()
+{
+    require('view/frontend/aproposView.php');
+}
+
+
 
 
 

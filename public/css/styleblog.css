@@ -1,14 +1,3 @@
-@font-face
-{
-    font-family: 'BallparkWeiner';
-    src: url('polices/ballpark.eot');
-    src: url('polices/ballpark.eot?#iefix') format('embedded-opentype'),
-         url('polices/ballpark.woff') format('woff'),
-         url('polices/ballpark.ttf') format('truetype'),
-         url('polices/ballpark.svg#BallparkWeiner') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 
 @font-face
 {
@@ -29,17 +18,40 @@ body
     color: #181818;
 }
 
+.banniere_image
+{
+    width: 1050px;
+    height: 150px;
+    background: url(../images/alaska_image_5.jpg) no-repeat;
+}
+
 
 .pagination, .continuer, .adminForm, .emptyComment, .comment p, h1, h2, h3
 {
     text-align:center;
 }
 
+h2, h3, nav a, .user, .continuer, .pagination a
+{
+    font-family: dayrom, serif;
+    font-weight: normal;
+}
+
+ h1
+{
+    font-size: 1.6em;
+}
+
+ h2
+{
+    font-size: 1.1em;
+}
+
 h3
 {
     background-color: grey;
     color: white;
-    font-size: 1.1em;
+    font-size: 1.2em;
     margin-bottom: 0px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -60,8 +72,8 @@ h3
 footer
 {
     background-color: grey;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 
 .signaler
@@ -117,15 +129,23 @@ a
     text-align: center;
     border-collapse: collapse;
 }
+
+table th
+{
+    background-color: grey;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: white;
+}
       
  td 
 {
-    padding: 3px;
+    padding: 8px;
 }
 
  .admin_wrap
 {
-    width: 70%;
+    width: 1050px;
     margin: auto;
     display: flex;
     flex-direction: column; 
@@ -133,7 +153,7 @@ a
 
 .public_wrap
 {
-    width: 70%;
+    width: 1050px;
     margin: auto;
 } 
 
@@ -168,15 +188,19 @@ tr:hover  td, a:hover{
    width: 50%;
 }
 
- h1
+.mentionsLegales
 {
-    font-size: 1.6em;
+    margin-right: 30px;
 }
 
- h2
+.static
 {
-    font-size: 1em;
+    text-align: justify;
+    padding: 12px;
+    margin-bottom: 80px;
+    background-color: #CCCCCC;
 }
+
 
 @media all and (max-width: 1024px)
 {
@@ -189,9 +213,14 @@ tr:hover  td, a:hover{
     nav ul
     {
         flex-direction: column;
-        margin-right: 50px;
+        margin-right: 40px;
     } 
     
+    .admin_wrap nav ul
+    {
+        margin-right: 0px;
+    } 
+
     .user
     {
         margin-left: 0px;
@@ -208,10 +237,25 @@ tr:hover  td, a:hover{
         width: 90%;
     }
 
-     .admin_wrap, .public_wrap, table
+    table
     {
         width: 100%;
+    }
+
+     .admin_wrap, .public_wrap
+    {
+        width: auto;
     } 
+
+    .postUpdateDate, .comment_date, .banniere_image
+    {
+        display: none;
+    }
+
+    .mentionsLegales
+    {
+        margin-right: 0px;
+    }
 
 }
 

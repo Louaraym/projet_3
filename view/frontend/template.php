@@ -15,6 +15,8 @@ session_start();
           ?>
               <div class="public_wrap">
 
+                   <div class="banniere_image"></div>
+
                   <nav>
                     <ul>
                       <li class="user">Bonjour <?= $_SESSION['pseudo']; ?></li>
@@ -25,7 +27,16 @@ session_start();
             
                   <h1>Billet simple pour l'Alaska</h1>
                   <?= $content ?>
-                  <footer></footer>
+
+                  <footer>
+                   <nav>
+                    <ul>
+                      <li><a href="index.php">Accueil</a></li>
+                       <li><a href="index.php?action=apropos"">A propos de Jean Forteroche</a></li>
+                      <li class="mentionsLegales"><a href="index.php?action=mentionsLegales">Mentions légales</a></li>
+                    </ul>
+                  </nav> 
+                </footer>
 
               </div> 
           <?php
@@ -34,10 +45,18 @@ session_start();
         {
            ?>
             <div class="public_wrap">
-
+                <div class="banniere_image"></div>
                 <h1>Billet simple pour l'Alaska</h1>
                 <?= $content ?>
-                <footer></footer>
+                <footer>
+                   <nav>
+                    <ul>
+                      <li><a href="index.php">Accueil</a></li>
+                      <li><a href="index.php?action=apropos"">A propos de Jean Forteroche</a></li>
+                      <li class="mentionsLegales"><a href="index.php?action=mentionsLegales">Mentions légales</a></li>
+                    </ul>
+                  </nav> 
+                </footer>
 
               </div> 
            <?php    

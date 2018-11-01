@@ -1,7 +1,7 @@
 
 <?php $title = htmlspecialchars($post->getTitle()); ?>
 <?php ob_start(); ?>
-        <h2><a href="index.php">Accueil du site</a></h2>
+        <h2><a href="index.php">Accueil</a></h2>
 
         <div class="news">
             <h3>
