@@ -27,7 +27,7 @@
                     <?= $content ?> 
                 </div>
                 <div class="continuer">
-                    <a href="index.php?action=post&amp;id=<?= $post->getId() ?>">Continuer la lecture ...</a> 
+                    <a href="index.php?page=post&amp;id=<?= $post->getId() ?>">Continuer la lecture ...</a> 
                 </div>
             </div>
         <?php

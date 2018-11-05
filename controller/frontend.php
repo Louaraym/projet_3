@@ -35,7 +35,7 @@ function addComment($postId, $author, $comment)
     }
     else 
     {
-        header('Location: index.php?action=post&id=' .$postId);
+        header('Location: index.php?page=post&id=' .$postId);
     }
 }
 
@@ -50,7 +50,7 @@ function alertComment($commentId)
     }
     else 
     {
-        header('Location: index.php?action=post&id=' .$_GET['post_id']);
+        header('Location: index.php?page=post&id=' .$_GET['post_id']);
     }
 }
 

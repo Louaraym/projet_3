@@ -88,9 +88,9 @@ class PostManager extends DaoManager
         $nbre_pages_max_gauche_et_droite = 5;
         $nbre_de_page = ceil($nbre_total_articles/$nbre_articles_par_page);
 
-        if (isset($_GET['page']) && is_numeric($_GET['page'])) 
+        if (isset($_GET['Page']) && is_numeric($_GET['Page'])) 
         {
-            $page_num = $_GET['page'];
+            $page_num = $_GET['Page'];
         }
         else
         {
@@ -154,12 +154,12 @@ class PostManager extends DaoManager
         if ($page_num>1) 
         {
           $previous = $page_num - 1;
-          $pagination .= '<a href="index.php?page=' .$previous. '"> < Précédent </a> &nbsp; &nbsp;';
+          $pagination .= '<a href="index.php?Page=' .$previous. '"> < Précédent </a> &nbsp; &nbsp;';
           for ($i= $page_num - $nbre_pages_max_gauche_et_droite; $i < $page_num; $i++) 
           { 
             if ($i>0)
             {
-              $pagination .= '<a href="index.php?page=' .$i. '">' .$i. '</a> &nbsp; &nbsp; ';
+              $pagination .= '<a href="index.php?Page=' .$i. '">' .$i. '</a> &nbsp; &nbsp; ';
             }
           }
         }
@@ -167,7 +167,7 @@ class PostManager extends DaoManager
         $pagination .= '<span class="page_num_active">' .$page_num. '</span> &nbsp; &nbsp;';
         for ($i= $page_num+1; $i <= $nbre_de_page ; $i++) 
         { 
-          $pagination .= '<a href="index.php?page=' .$i. '">' .$i. '</a>&nbsp; &nbsp; ';
+          $pagination .= '<a href="index.php?Page=' .$i. '">' .$i. '</a>&nbsp; &nbsp; ';
           if ($i>=$page_num + $nbre_pages_max_gauche_et_droite) 
           {
             break;
@@ -177,7 +177,7 @@ class PostManager extends DaoManager
         if ($page_num != $nbre_de_page) 
         {
           $next = $page_num +1;
-          $pagination .= '<a href="index.php?page=' .$next. '"> Suivant ></a> ';
+          $pagination .= '<a href="index.php?Page=' .$next. '"> Suivant ></a> ';
         }
 
       }

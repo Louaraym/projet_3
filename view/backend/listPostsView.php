@@ -16,7 +16,7 @@ if (isset($_SESSION['pseudo']))
 
         foreach ($listPosts as $post)
         {
-             echo '<tr><td>' .$post->getAuthor(). '</td><td>' .$post->getTitle(). '</td><td>' .$post->getCreation_date()->format('d/m/Y à H\hi'). '</td><td class="postUpdateDate">' .($post->getCreation_date() == $post->getUpdate_date() ? '-' : $post->getUpdate_date()->format('d/m/Y à H\hi')). '</td><td><a href="index.php?action=post&amp;id=' .$post->getId(). '">Voir</a> | <a href="admin.php?action=updatePostView&amp;id=' .$post->getId(). '"> Modifier </a> | <a href="admin.php?action=deletePost&amp;id=' .$post->getId(). '">Supprimer</a></td></tr>' ."\n";
+             echo '<tr><td>' .$post->getAuthor(). '</td><td>' .$post->getTitle(). '</td><td>' .$post->getCreation_date()->format('d/m/Y à H\hi'). '</td><td class="postUpdateDate">' .($post->getCreation_date() == $post->getUpdate_date() ? '-' : $post->getUpdate_date()->format('d/m/Y à H\hi')). '</td><td><a href="index.php?page=post&amp;id=' .$post->getId(). '">Voir</a> | <a href="admin.php?page=updatePostView&amp;id=' .$post->getId(). '"> Modifier </a> | <a href="admin.php?page=deletePost&amp;id=' .$post->getId(). '">Supprimer</a></td></tr>' ."\n";
         } 
 
     ?>
@@ -25,7 +25,7 @@ if (isset($_SESSION['pseudo']))
  }
 else
 {
-    header('location: index.php?action=login');
+    header('location: index.php?page=login');
 }
 ?>
 <?php $content = ob_get_clean(); ?>

@@ -18,10 +18,10 @@
             <ul>
                 <li><a href="index.php">Accueil du site</a></li>
                 <li><a href="admin.php">Tableau de bord</a></li>
-                <li><a href="admin.php?action=addView">Ajouter un article</a></li>
-                <li><a href="admin.php?action=listComments">Les commentaires</a></li>
-                <li><a href="admin.php?action=updateMyProfil">Modifier mon profil</a></li>
-                <li><a href="admin.php?action=logOut">Se déconnecter</a></li>
+                <li><a href="admin.php?page=addView">Ajouter un article</a></li>
+                <li><a href="admin.php?page=listComments">Les commentaires</a></li>
+                <li><a href="admin.php?page=updateMyProfil">Modifier mon profil</a></li>
+                <li><a href="admin.php?page=logOut">Se déconnecter</a></li>
             </ul>
             </nav>
             <h2>Bonjour <?= $_SESSION['pseudo']; ?></h2> 
@@ -31,7 +31,7 @@
         }
         else
         {
-            header('location: index.php?action=login');
+            header('location: index.php?page=login');
         }
         ?>
          

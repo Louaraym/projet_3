@@ -38,7 +38,7 @@
                 <?= nl2br(htmlspecialchars($comment->getComment())) ?>
             </p>
             <div class="signaler">
-                <a href="index.php?action=alertComment&amp;id=<?= $comment->getId() ?>&amp;
+                <a href="index.php?page=alertComment&amp;id=<?= $comment->getId() ?>&amp;
                 post_id=<?= $comment->getPost_id() ?>">Signaler</a>
             </div>
         </div> 
@@ -49,7 +49,7 @@
          ?>
          <div class="commentForm">
             <h2> Commenter cet épisode </h2>
-            <form action="index.php?action=addComment&amp;id=<?= $post->getId() ?>" method="post">
+            <form action="index.php?page=addComment&amp;id=<?= $post->getId() ?>" method="post">
                 <p><label for="pseudo">Votre pseudo*</label> <br><input type="text" name="author" id="pseudo" size="30" required class="my_form" /> </p>
                 <p><label for="message">Votre commentaire*</label> <br><textarea name="comment" rows="15" cols="60" id="message" required class="my_form"></textarea></p> 
                  <p>Votre commentaire sera publié dans les plus brefs délais après modération</p>      

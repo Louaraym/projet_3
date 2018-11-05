@@ -17,7 +17,7 @@ if (isset($_SESSION['pseudo']))
 
         foreach ($commentsToModerate as $comment)
         {
-             echo '<tr><td>' .htmlspecialchars($comment->getAuthor()). '</td><td>' .htmlspecialchars($comment->getComment()). '</td><td>' .$comment->getTitle(). '</td><td class="comment_date">' .$comment->getComment_date()->format('d/m/Y à H\hi'). '</td><td><a href="admin.php?action=moderateComment&amp;id=' .$comment->getId(). '">Approuver</a> |<a href="admin.php?action=deleteComment&amp;id=' .$comment->getId(). '">Supprimer</a></td></tr>' ."\n";
+             echo '<tr><td>' .htmlspecialchars($comment->getAuthor()). '</td><td>' .htmlspecialchars($comment->getComment()). '</td><td>' .$comment->getTitle(). '</td><td class="comment_date">' .$comment->getComment_date()->format('d/m/Y à H\hi'). '</td><td><a href="admin.php?page=moderateComment&amp;id=' .$comment->getId(). '">Approuver</a> |<a href="admin.php?page=deleteComment&amp;id=' .$comment->getId(). '">Supprimer</a></td></tr>' ."\n";
         } 
     ?>
 </table> 
@@ -30,7 +30,7 @@ if (isset($_SESSION['pseudo']))
 
        foreach ($listComments as $comment)
         {
-             echo '<tr><td>' .htmlspecialchars($comment->getAuthor()). '</td><td>' .htmlspecialchars($comment->getComment()). '</td><td>' .$comment->getTitle(). '</td><td class="comment_date">' .$comment->getComment_date()->format('d/m/Y à H\hi'). '</td><td>' .$comment->getAlert(). '</td><td><a href="admin.php?action=deleteComment&amp;id=' .$comment->getId(). '">Supprimer</a></td></tr>' ."\n";
+             echo '<tr><td>' .htmlspecialchars($comment->getAuthor()). '</td><td>' .htmlspecialchars($comment->getComment()). '</td><td>' .$comment->getTitle(). '</td><td class="comment_date">' .$comment->getComment_date()->format('d/m/Y à H\hi'). '</td><td>' .$comment->getAlert(). '</td><td><a href="admin.php?page=deleteComment&amp;id=' .$comment->getId(). '">Supprimer</a></td></tr>' ."\n";
         } 
     ?>
 </table> 
@@ -38,7 +38,7 @@ if (isset($_SESSION['pseudo']))
  }
 else
 {
-    header('location: index.php?action=login');
+    header('location: index.php?page=login');
 }
 ?>
 <?php $content = ob_get_clean(); ?>

@@ -24,7 +24,7 @@ session_start();
      }
     else
     {
-        header('location: index.php?action=login');
+        header('location: index.php?pagelogin');
     }
 
     ?>

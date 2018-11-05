@@ -6,20 +6,20 @@ try
     $postManager = new PostManager();   
     $idValid = $postManager->getIdValid();
 
-    if (isset($_GET['action'])) 
+    if (isset($_GET['page'])) 
     {
         // Affichage de la liste des articles sur le tableau de bord
-        if ($_GET['action'] == 'listPosts') 
+        if ($_GET['page'] == 'listPosts') 
         {
             listPosts();
         }
         // Affichage des commentaires
-        elseif ($_GET['action'] == 'listComments') 
+        elseif ($_GET['page'] == 'listComments') 
         {
            listComments();
         }
          // Moderation d'un commentaire
-        elseif ($_GET['action'] == 'moderateComment') 
+        elseif ($_GET['page'] == 'moderateComment') 
         {
             if (isset($_GET['id']) && $_GET['id'] > 0) 
             {
@@ -32,12 +32,12 @@ try
             }
         }
          // Affichage page édition article
-        elseif ($_GET['action'] == 'addView') 
+        elseif ($_GET['page'] == 'addView') 
         {
            addView();
         }
         //Ajout d'un article
-        elseif ($_GET['action'] == 'addPost') 
+        elseif ($_GET['page'] == 'addPost') 
         {     
             if (!empty($_POST['author']) && !empty($_POST['title']) && !empty($_POST['content'])) 
             {
@@ -49,7 +49,7 @@ try
             }        
         }
         // Suppression d'un article
-        elseif ($_GET['action'] == 'deletePost') 
+        elseif ($_GET['page'] == 'deletePost') 
         {
             if (isset($_GET['id']) && in_array($_GET['id'],  $idValid)) 
             {
@@ -61,8 +61,21 @@ try
                     Vous pouvez contacter l\'administrateur du site si vous pensez qu\'il s\'agit d\'un bug.');
             }
         }
+        // Suppression d'un commentaire
+        elseif ($_GET['page'] == 'deleteComment') 
+        {
+            if (isset($_GET['id']) && $_GET['id'] > 0) 
+            {
+                deleteComment($_GET['id']);
+            }
+            else 
+            {
+                throw new \Exception('Le document auquel vous tentez d\'accéder est introuvable. <br>
+                    Vous pouvez contacter l\'administrateur du site si vous pensez qu\'il s\'agit d\'un bug.');
+            }
+        }
         // Affichage page de mise à jour
-        elseif ($_GET['action'] == 'updatePostView') 
+        elseif ($_GET['page'] == 'updatePostView') 
         {
             if (isset($_GET['id']) && in_array($_GET['id'],  $idValid) ) 
             {
@@ -75,7 +88,7 @@ try
             }
         }
         // Mise à jour d'un article
-        elseif ($_GET['action'] == 'updatePost') 
+        elseif ($_GET['page'] == 'updatePost') 
         {
             if (isset($_GET['id']) && in_array($_GET['id'],  $idValid)) 
             {
@@ -95,12 +108,12 @@ try
             }
         }
         // Déconnexion
-        elseif ($_GET['action'] == 'logOut') 
+        elseif ($_GET['page'] == 'logOut') 
         {
            logOut();
         }
         // Affichage page changement de profil
-        elseif ($_GET['action'] == 'updateMyProfil') 
+        elseif ($_GET['page'] == 'updateMyProfil') 
         {
            updateMyProfil();
         }

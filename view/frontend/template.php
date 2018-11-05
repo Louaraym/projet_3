@@ -21,7 +21,7 @@ session_start();
                     <ul>
                       <li class="user">Bonjour <?= $_SESSION['pseudo']; ?></li>
                       <li><a href="admin.php">Tableau de bord</a></li>
-                      <li><a href="admin.php?action=logOut">Se déconnecter</a></li>
+                      <li><a href="admin.php?page=logOut">Se déconnecter</a></li>
                     </ul>
                   </nav> 
             
@@ -32,8 +32,8 @@ session_start();
                    <nav>
                     <ul>
                       <li><a href="index.php">Accueil</a></li>
-                       <li><a href="index.php?action=apropos"">A propos de Jean Forteroche</a></li>
-                      <li class="mentionsLegales"><a href="index.php?action=mentionsLegales">Mentions légales</a></li>
+                       <li><a href="index.php?page=apropos"">A propos de Jean Forteroche</a></li>
+                      <li class="mentionsLegales"><a href="index.php?page=mentionsLegales">Mentions légales</a></li>
                     </ul>
                   </nav> 
                 </footer>
@@ -52,8 +52,8 @@ session_start();
                    <nav>
                     <ul>
                       <li><a href="index.php">Accueil</a></li>
-                      <li><a href="index.php?action=apropos"">A propos de Jean Forteroche</a></li>
-                      <li class="mentionsLegales"><a href="index.php?action=mentionsLegales">Mentions légales</a></li>
+                      <li><a href="index.php?page=apropos"">A propos de Jean Forteroche</a></li>
+                      <li class="mentionsLegales"><a href="index.php?page=mentionsLegales">Mentions légales</a></li>
                     </ul>
                   </nav> 
                 </footer>

@@ -7,15 +7,15 @@ try
     $idValid = $postManager->getIdValid();
 
 
-    if (isset($_GET['action'])) 
+    if (isset($_GET['page'])) 
     {
         //Affichage de la liste des articles publiées
-        if ($_GET['action'] == 'listPosts') 
+        if ($_GET['page'] == 'listPosts') 
         {
             listPosts();
         }
          //Page: Affichage article unique avec ses commentaires
-        elseif ($_GET['action'] == 'post') 
+        elseif ($_GET['page'] == 'post') 
         {
             if (isset($_GET['id']) && in_array($_GET['id'], $idValid)) 
             {
@@ -28,17 +28,18 @@ try
             }
         }
         //Ajout d'un commentaire à un article
-        elseif ($_GET['action'] == 'addComment') 
+        elseif ($_GET['page'] == 'addComment') 
         {
             if (isset($_GET['id']) && in_array($_GET['id'], $idValid) )
             {
-                if (!empty($_POST['author']) && !empty($_POST['comment'])) 
+                if (!empty($_POST['author']) && !empty($_POST['comment'])
+                     && is_string($_POST['author']) && is_string($_POST['comment'])) 
                 {
                     addComment($_GET['id'], $_POST['author'], $_POST['comment']);
                 }
                 else 
                 {
-                    header('Location: index.php?action=post&id=' .$_GET['id']);
+                    header('Location: index.php?page=post&id=' .$_GET['id']);
                 }
             }
             else 
@@ -48,7 +49,7 @@ try
             }
         }
         // Signalement d'un commentaire par un utilisateur
-        elseif ($_GET['action'] == 'alertComment') 
+        elseif ($_GET['page'] == 'alertComment') 
         {
             if (isset($_GET['id']) && $_GET['id'] >0) 
             {
@@ -61,17 +62,17 @@ try
             }
         }
         //Affichage page Mentions légales
-         elseif ($_GET['action'] == 'mentionsLegales') 
+         elseif ($_GET['page'] == 'mentionsLegales') 
         {
             mentionsLegales();
         }
         //Affichage page A propos de l'auteur
-         elseif ($_GET['action'] == 'apropos') 
+         elseif ($_GET['page'] == 'apropos') 
         {
             apropos();
         }
         // Affichage page de connexion
-         elseif ($_GET['action'] == 'login') 
+         elseif ($_GET['page'] == 'login') 
         {
             loginForm();
         }

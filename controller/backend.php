@@ -33,7 +33,7 @@ function moderateComment($commentId)
     }
     else 
     {
-        header('Location: admin.php?action=listComments');
+        header('Location: admin.php?page=listComments');
     }
 }
 
@@ -94,8 +94,7 @@ function deleteComment($commentId)
     $postManager = new CommentManager();
     $post = $postManager->deleteComments($_GET['id']);
     
-    header('Location: admin.php?action=listComments');
-   
+    header('Location: admin.php?page=listComments');
 } 
 
 function loginView()
@@ -131,7 +130,7 @@ function updateMyProfil()
                 }
                 else 
                 {
-                    header('location: index.php?action=login');
+                    header('location: index.php?page=login');
                 }
                 
              }              
@@ -173,7 +172,7 @@ function updateMyProfil()
                 }
                 else 
                 {
-                    header('location: index.php?action=login');
+                    header('location: index.php?page=login');
                 }
                 
             }
