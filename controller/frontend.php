@@ -1,5 +1,7 @@
 <?php
 namespace loray\projet_3;
+use http\QueryString;
+
 require('model/Autoloader.php');
 Autoloader::register();
 

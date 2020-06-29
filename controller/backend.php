@@ -3,7 +3,9 @@ namespace loray\projet_3;
 require('model/Autoloader.php');
 Autoloader::register();
 
-
+/**
+ * Recuperer les articles et les passer à la vue
+ */
 function listPosts()
 {
     $postManager = new PostManager();
@@ -99,7 +101,7 @@ function deleteComment($commentId)
 
 function loginView()
 {
-    require('view/backend/loginView.php');
+    require('view/frontend/loginView.php');
 }
 
 function logOut()

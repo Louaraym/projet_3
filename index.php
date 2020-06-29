@@ -10,12 +10,12 @@ try
     if (isset($_GET['page'])) 
     {
         //Affichage de la liste des articles publiées
-        if ($_GET['page'] == 'listPosts') 
+        if ($_GET['page'] === 'listPosts')
         {
             listPosts();
         }
          //Page: Affichage article unique avec ses commentaires
-        elseif ($_GET['page'] == 'post') 
+        elseif ($_GET['page'] === 'post')
         {
             if (isset($_GET['id']) && in_array($_GET['id'], $idValid)) 
             {
@@ -28,7 +28,7 @@ try
             }
         }
         //Ajout d'un commentaire à un article
-        elseif ($_GET['page'] == 'addComment') 
+        elseif ($_GET['page'] === 'addComment')
         {
             if (isset($_GET['id']) && in_array($_GET['id'], $idValid) )
             {
@@ -49,7 +49,7 @@ try
             }
         }
         // Signalement d'un commentaire par un utilisateur
-        elseif ($_GET['page'] == 'alertComment') 
+        elseif ($_GET['page'] === 'alertComment')
         {
             if (isset($_GET['id']) && $_GET['id'] >0) 
             {
@@ -62,17 +62,17 @@ try
             }
         }
         //Affichage page Mentions légales
-         elseif ($_GET['page'] == 'mentionsLegales') 
+         elseif ($_GET['page'] === 'mentionsLegales')
         {
             mentionsLegales();
         }
         //Affichage page A propos de l'auteur
-         elseif ($_GET['page'] == 'apropos') 
+         elseif ($_GET['page'] === 'apropos')
         {
             apropos();
         }
         // Affichage page de connexion
-         elseif ($_GET['page'] == 'login') 
+         elseif ($_GET['page'] === 'login')
         {
             loginForm();
         }

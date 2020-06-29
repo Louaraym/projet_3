@@ -7,13 +7,13 @@ class PostManager extends DaoManager
 
      public function count()
     {
-      $nbre_total_articles = $this->dao->query('SELECT COUNT(id) FROM posts')->fetchColumn();
-      return  $nbre_total_articles;
+        return $this->dao->query('SELECT COUNT(id) FROM posts')->fetchColumn();
     }
 
     public function getIdValid()
     {
         $data_id = [];
+        $idValid = [];
         $req = $this->dao->query('SELECT id FROM posts');
 
         while ($data_id = $req->fetch(\PDO::FETCH_ASSOC))
@@ -60,9 +60,8 @@ class PostManager extends DaoManager
     {
         $post = $this->dao->prepare('INSERT INTO posts(author, title, content, creation_date, update_date) 
                 VALUES(?, ?, ?, NOW(), NOW())');
-        $ajout = $post->execute(array($author, $title, $content));
 
-        return $ajout;
+        return $post->execute(array($author, $title, $content));
     }
 
      public function deletePost($postId)
@@ -76,9 +75,8 @@ class PostManager extends DaoManager
      public function update($author, $title, $content, $postId)
     {
        $req = $this->dao->prepare('UPDATE  posts SET author = ?,title = ?, content = ?, update_date = NOW() WHERE id = ?');
-       $modif = $req->execute(array($author, $title, $content, $postId));
 
-      return $modif;
+        return $req->execute(array($author, $title, $content, $postId));
     }
 
      public function paginationInfo()

@@ -83,7 +83,7 @@ class CommentManager extends DaoManager
       $req = $this->dao->prepare('UPDATE  comments SET alert = \'OUI\' WHERE id = ?');
       $alerte= $req->execute(array($commentId));
 
-      return $alert;
+      return $alerte;
     }
 
 
